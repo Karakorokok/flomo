@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">FloMo</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="log_in">LOG IN</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="email">Email Address</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="sign_up_message">Don\'t have an account?</string>
+    <string name="log_in_message">Already have an account?</string>
+    <string name="create_account">Create Account</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="confirm">Confirm Password</string>
+    <string name="ph_level">pH Level</string>
+    <string name="logout">Logout</string>
+    <string name="water_level">Water Level</string>
+    <string name="see_consumption">See Consumption</string>
+    <string name="tds">TDS</string>
+    <string name="ppm">--- ppm</string>
+    <string name="_7_00">7.00</string>
+    <string name="status">Status</string>
+    <string name="_10">10%</string>
+    <string name="turbidity">Turbidity</string>
+    <string name="null_val">---</string>
+    <string name="override_switch">Override Switch</string>
+    <string name="off">OFF</string>
+    <string name="on">ON</string>
+    <string name="water_consumption">Water Consumption</string>
+    <string name="yearly">Yearly</string>
+    <string name="_0_l">0 L</string>
+    <string name="monthly">Monthly</string>
+    <string name="weekly">Weekly</string>
+    <string name="daily">Daily</string>
+</resources>

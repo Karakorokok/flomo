@@ -1,0 +1,34 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background circle -->
+    <item>
+        <shape android:shape="ring"
+            android:thicknessRatio="20"
+            android:innerRadiusRatio="3"
+            android:useLevel="false">
+            <size android:width="180dp" android:height="180dp"/>
+            <solid android:color="#06112A"/>
+        </shape>
+    </item>
+
+    <!-- Progress arc -->
+    <item>
+        <rotate
+            android:fromDegrees="270"
+            android:pivotX="50%"
+            android:pivotY="50%">
+            <shape
+                android:shape="ring"
+                android:useLevel="true"
+                android:thicknessRatio="20"
+                android:innerRadiusRatio="3">
+                <size android:width="180dp" android:height="180dp"/>
+                <gradient
+                    android:type="sweep"
+                    android:useLevel="true"
+                    android:startColor="#5EDD60" 
+                    android:endColor="#5EDD60"/>
+				
+            </shape>
+        </rotate>
+    </item>
+</layer-list>
