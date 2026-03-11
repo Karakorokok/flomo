@@ -1,14 +1,14 @@
 {
   "project_info": {
-    "project_number": "10650415716",
-    "firebase_url": "https://flomo-c5e02-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "flomo-c5e02",
-    "storage_bucket": "flomo-c5e02.firebasestorage.app"
+    "project_number": "427160205848",
+    "firebase_url": "https://flomo-8203c-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "flomo-8203c",
+    "storage_bucket": "flomo-8203c.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:10650415716:android:24046cfb16e821a4aea571",
+        "mobilesdk_app_id": "1:427160205848:android:52827424703613682ee16d",
         "android_client_info": {
           "package_name": "com.iot.flomo"
         }
@@ -16,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBLPL1U8TJAq8BjrKPxhoC6yazgTOdH7lU"
+          "current_key": "AIzaSyBvjUdE5iJT9IgUhP2BXKxd1Ha16dteHs8"
         }
       ],
       "services": {
