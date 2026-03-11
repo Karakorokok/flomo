@@ -52,4 +52,6 @@ dependencies {
     implementation(libs.firebase.analytics)
     implementation(libs.firebase.database)
 
+    implementation(libs.photoview)
+
 }

@@ -6,5 +6,7 @@
     <color name="blue">#06112A</color>
     <color name="sky">#47C9F3</color>
     <color name="green">#5EDD60</color>
+    <color name="hr">#D3D3D3</color>
+    <color name="red">#EF5350</color>
 </resources>
 

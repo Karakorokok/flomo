@@ -3,7 +3,10 @@
     <style name="Base.Theme.FloMo" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:fontFamily">@font/goldman_regular</item>
     </style>
 
-    <style name="Theme.FloMo" parent="Base.Theme.FloMo" />
+    <style name="Theme.FloMo" parent="Base.Theme.FloMo">
+        <item name="android:fontFamily">@font/goldman_regular</item>
+    </style>
 </resources>

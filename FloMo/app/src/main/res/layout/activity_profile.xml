@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_backblue"
+        tools:context=".ProfileActivity">
+
+        <!-- Carat back -->
+        <ImageButton
+            android:id="@+id/btnBackToHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/round_arrow_back_ios_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/editprofilelabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profile"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/btnBackToHome"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp" />
+
+        <FrameLayout
+            android:id="@+id/framePic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:clipToOutline="true"
+            app:layout_constraintTop_toBottomOf="@id/editprofilelabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- Main Profile Image Button -->
+            <ImageButton
+                android:id="@+id/btnProfileImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/user"
+                android:scaleType="centerInside"
+                android:background="@drawable/profile_background"
+                android:contentDescription="Upload Profile Image"
+                android:clipToOutline="true" />
+
+            <!-- Edit/Upload Icon Overlay -->
+            <ImageView
+                android:id="@+id/btnEditProfileIcon"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/pen"
+                android:background="@drawable/profile_background"
+                android:padding="1dp"
+                android:layout_gravity="bottom|end"
+                android:contentDescription="Edit Profile Image" />
+        </FrameLayout>
+
+
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/framePic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="3dp"/>
+
+        <TextView
+            android:id="@+id/txtPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="000"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/txtName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="0dp"/>
+
+        <TextView
+            android:id="@+id/labelName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/txtPhone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="30dp"/>
+
+        <EditText
+            android:id="@+id/inputName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/pill_edittext"
+            android:textColor="@color/blue"
+            android:hint="Name"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/labelName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"/>
+
+        <TextView
+            android:id="@+id/labelPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/inputName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="5dp"/>
+
+        <EditText
+            android:id="@+id/inputPhone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/pill_edittext"
+            android:textColor="@color/blue"
+            android:hint="Phone"
+            android:inputType="phone"
+            android:padding="16dp"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/labelPhone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"/>
+
+        <TextView
+            android:id="@+id/labelEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/inputPhone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="5dp"/>
+
+        <EditText
+            android:id="@+id/inputEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/pill_edittext"
+            android:textColor="@color/blue"
+            android:hint="Email"
+            android:inputType="text"
+            android:padding="16dp"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/labelEmail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Changes"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:background="@drawable/pill_edittext"
+            android:textColor="@color/dark"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/inputEmail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/AboutLogoutCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/rounded_white_bg"
+            android:padding="10dp"
+            app:layout_constraintTop_toBottomOf="@id/btnSave"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="start">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="5dp">
+
+                    <ImageView
+                        android:id="@+id/aboutIcon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/about"
+                        android:layout_marginEnd="10dp" />
+
+                    <TextView
+                        android:id="@+id/aboutLabel"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="About Us / Contact Us"
+                        android:textStyle="bold"
+                        android:textColor="@color/blue"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/aboutArrow"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/chevron"
+                        android:layout_marginStart="10dp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/hr"
+                    android:layout_marginVertical="4dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="5dp">
+
+                    <ImageView
+                        android:id="@+id/logoutIcon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/logout"
+                        android:layout_marginEnd="10dp" />
+
+                    <TextView
+                        android:id="@+id/logoutLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Logout"
+                        android:textStyle="bold"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </FrameLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

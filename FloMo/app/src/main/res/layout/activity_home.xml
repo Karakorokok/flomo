@@ -1,408 +1,468 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:background="@drawable/gradient_backblue"
+    tools:context=".HomeActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/hometitle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/gradient_backblue"
-        tools:context=".HomeActivity">
+        android:text="@string/app_name"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/menuButton"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="8dp" />
 
-        <TextView
-            android:id="@+id/hometitle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/menuButton"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="8dp" />
+    <ImageButton
+        android:id="@+id/menuButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_hamburger"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintTop_toTopOf="@id/hometitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="30dp"
+        android:padding="8dp" />
 
-        <ImageButton
-            android:id="@+id/menuButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_hamburger"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            app:layout_constraintTop_toTopOf="@id/hometitle"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="30dp"
-            android:padding="8dp" />
+    <ScrollView
+        android:id="@+id/scrollContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/hometitle"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <FrameLayout
-            android:id="@+id/phCard"
-            android:layout_width="0dp"
-            android:layout_height="180dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="5dp"
-            android:background="@drawable/rounded_white_bg"
-            android:padding="10dp"
-            app:layout_constraintTop_toBottomOf="@id/hometitle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/tdsCard"
-            android:layout_marginStart="30dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="top|center_horizontal">
-
-                <TextView
-                    android:id="@+id/phLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/ph_level"
-                    android:textStyle="bold"
-                    android:textColor="@color/blue"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-            <ProgressBar
-                android:id="@+id/circularProgress"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:max="100"
-                android:progress="70"
-                android:layout_marginTop="10dp"
-                android:indeterminate="false"
-                android:progressDrawable="@drawable/circular_progress"
-                android:rotation="270" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/percentageText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:layout_marginTop="10dp"
-                android:text="@string/_7_00"
-                android:textSize="22sp"
-                android:textColor="#5EDD60"
-                android:textStyle="bold" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/tdsCard"
-            android:layout_width="0dp"
-            android:layout_height="180dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="30dp"
-            android:background="@drawable/rounded_white_bg"
-            android:padding="10dp"
-            app:layout_constraintTop_toTopOf="@id/phCard"
-            app:layout_constraintStart_toEndOf="@id/phCard"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center"
-                tools:ignore="UselessParent">
-
-                <TextView
-                    android:id="@+id/tdsLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tds"
-                    android:textColor="@color/blue"
-                    android:textStyle="bold"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/tdsValue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/ppm"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp" />
-
-                <TextView
-                    android:id="@+id/tdsStatus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/status"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    android:layout_marginTop="8dp" />
-            </LinearLayout>
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/waterCard"
-            android:layout_width="0dp"
-            android:layout_height="300dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="5dp"
-            android:background="@drawable/rounded_white_bg"
-            android:padding="10dp"
-            app:layout_constraintTop_toBottomOf="@id/phCard"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/turbidityCard"
-            android:layout_marginStart="30dp">
-
-            <TextView
-                android:id="@+id/waterLabel"
+                android:id="@+id/txtLogs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/water_level"
-                android:textColor="@color/blue"
+                android:text="Logs"
+                android:textColor="@color/white"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_gravity="top|center_horizontal" />
-
-            <ProgressBar
-                android:id="@+id/waterProgress"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="80dp"
-                android:layout_height="200dp"
-                android:layout_gravity="center"
-                android:max="100"
-                android:progress="10"
-                android:indeterminate="false"
-                android:progressDrawable="@drawable/vertical_progress" />
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/waterPercentText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|center_horizontal"
-                android:text="@string/_10"
-                android:textColor="@color/blue"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:textSize="20sp"
-                android:layout_marginBottom="10dp"/>
-        </FrameLayout>
-
-
-        <FrameLayout
-            android:id="@+id/turbidityCard"
-            android:layout_width="0dp"
-            android:layout_height="180dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="30dp"
-            android:background="@drawable/rounded_white_bg"
-            android:padding="10dp"
-            app:layout_constraintTop_toBottomOf="@id/tdsCard"
-            app:layout_constraintStart_toEndOf="@id/waterCard"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center"
-                tools:ignore="UselessParent">
-
-                <TextView
-                    android:id="@+id/turbidityLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/turbidity"
-                    android:textColor="@color/blue"
-                    android:textStyle="bold"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/turbidityValue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/null_val"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp" />
-            </LinearLayout>
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/switchCard"
-            android:layout_width="0dp"
-            android:layout_height="110dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="30dp"
-            android:background="@drawable/rounded_white_bg"
-            android:padding="10dp"
-            app:layout_constraintTop_toBottomOf="@id/turbidityCard"
-            app:layout_constraintStart_toEndOf="@id/waterCard"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <TextView
-                android:id="@+id/switchLabel"
+                android:id="@+id/txtOverallStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/override_switch"
-                android:layout_gravity="top|center_horizontal"
-                android:textColor="@color/blue"
-                android:textStyle="bold"
-                android:textSize="16sp" />
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtLogs" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
+            <FrameLayout
+                android:id="@+id/phCard"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:background="@drawable/rounded_white_bg"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@id/txtOverallStatus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tdsCard"
+                android:layout_marginStart="30dp"
                 android:layout_marginTop="10dp"
-                android:gravity="center">
+                android:layout_marginEnd="5dp">
 
-                <TextView
-                    android:id="@+id/textOff"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/off"
-                    android:textStyle="bold"
-                    android:textSize="12sp"
-                    android:layout_marginEnd="8dp" />
-
-                <androidx.appcompat.widget.SwitchCompat
-                    android:id="@+id/overrideSwitch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:scaleX="1.5"
-                    android:scaleY="1.5"
-                    app:trackTint="@color/switch_track_color"
-                    app:thumbTint="@color/white" />
-
-                <TextView
-                    android:id="@+id/textOn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/on"
-                    android:textStyle="bold"
-                    android:textSize="12sp"
-                    android:layout_marginStart="8dp" />
-            </LinearLayout>
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/consumptionCard"
-            android:layout_width="0dp"
-            android:layout_height="130dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
-            android:background="@drawable/rounded_white_bg"
-            android:padding="10dp"
-            app:layout_constraintTop_toBottomOf="@id/switchCard"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center_horizontal"
-                tools:ignore="UselessParent">
-
-                <!-- Title -->
-                <TextView
-                    android:id="@+id/consumptionLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/water_consumption"
-                    android:textColor="@color/blue"
-                    android:textStyle="bold"
-                    android:textSize="16sp" />
-
-                <!-- Three column headers + values -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="top|center_horizontal">
+
+                    <TextView
+                        android:id="@+id/phLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ph_level"
+                        android:textStyle="bold"
+                        android:textColor="@color/blue"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <ProgressBar
+                    android:id="@+id/circularProgress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:max="100"
+                    android:progress="70"
+                    android:layout_marginTop="10dp"
+                    android:indeterminate="false"
+                    android:progressDrawable="@drawable/circular_progress"
+                    android:rotation="270" />
+
+                <TextView
+                    android:id="@+id/percentageText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:gravity="center"
-                    android:layout_marginTop="15dp"
-                    android:weightSum="3">
+                    android:layout_marginTop="25dp"
+                    android:text="@string/_7_00"
+                    android:textSize="22sp"
+                    android:textColor="#5EDD60"
+                    android:textStyle="bold" />
 
-                    <!-- Weekly -->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="center">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/daily"
-                            android:textStyle="bold"
-                            android:textColor="@color/dark" />
-                        <TextView
-                            android:id="@+id/dailyValue"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/_0_l"
-                            android:textSize="16sp"
-                            android:textColor="@color/black"
-                            android:textStyle="bold" />
-                    </LinearLayout>
+                <com.github.chrisbanes.photoview.PhotoView
+                    android:id="@+id/phScale"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    android:src="@drawable/ph_scale"
+                    app:layout_constraintTop_toBottomOf="@id/percentageText" />
 
-                    <!-- Monthly -->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="center">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/monthly"
-                            android:textStyle="bold"
-                            android:textColor="@color/dark" />
-                        <TextView
-                            android:id="@+id/monthlyValue"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/_0_l"
-                            android:textSize="16sp"
-                            android:textColor="@color/black"
-                            android:textStyle="bold" />
-                    </LinearLayout>
+            </FrameLayout>
 
-                    <!-- Yearly -->
-                    <LinearLayout
-                        android:layout_width="0dp"
+            <FrameLayout
+                android:id="@+id/tdsCard"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/rounded_white_bg"
+                android:padding="10dp"
+                app:layout_constraintStart_toEndOf="@id/phCard"
+                app:layout_constraintTop_toTopOf="@id/phCard"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="5dp" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    tools:ignore="UselessParent">
+
+                    <TextView
+                        android:id="@+id/tdsLabel"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="center">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/yearly"
-                            android:textStyle="bold"
-                            android:textColor="@color/dark" />
-                        <TextView
-                            android:id="@+id/yearlyValue"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/_0_l"
-                            android:textSize="16sp"
-                            android:textColor="@color/black"
-                            android:textStyle="bold" />
-                    </LinearLayout>
+                        android:text="@string/tds"
+                        android:textColor="@color/blue"
+                        android:textStyle="bold"
+                        android:textSize="16sp" />
+
+                    <com.github.chrisbanes.photoview.PhotoView
+                        android:id="@+id/tdsScale"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:visibility="gone"
+                        android:src="@drawable/tds_scale"
+                        app:layout_constraintTop_toBottomOf="@id/tdsLabel" />
+
+                    <TextView
+                        android:id="@+id/tdsValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ppm"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp" />
+
+                    <TextView
+                        android:id="@+id/tdsStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/status"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:layout_marginTop="8dp" />
 
                 </LinearLayout>
-            </LinearLayout>
-        </FrameLayout>
+            </FrameLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+            <FrameLayout
+                android:id="@+id/waterCard"
+                android:layout_width="0dp"
+                android:layout_height="300dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/rounded_white_bg"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@id/phCard"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/turbidityCard"
+                android:layout_marginStart="30dp">
+
+                <TextView
+                    android:id="@+id/waterLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/water_level"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="top|center_horizontal" />
+
+                <ProgressBar
+                    android:id="@+id/waterProgress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="80dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:max="100"
+                    android:progress="10"
+                    android:indeterminate="false"
+                    android:progressDrawable="@drawable/vertical_progress" />
+
+                <TextView
+                    android:id="@+id/waterPercentText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:text="@string/_10"
+                    android:textColor="@color/blue"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="10dp"/>
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:id="@+id/turbidityCard"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/rounded_white_bg"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@id/tdsCard"
+                app:layout_constraintStart_toEndOf="@id/waterCard"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    tools:ignore="UselessParent">
+
+                    <TextView
+                        android:id="@+id/turbidityLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/turbidity"
+                        android:textColor="@color/blue"
+                        android:textStyle="bold"
+                        android:textSize="16sp" />
+
+                    <com.github.chrisbanes.photoview.PhotoView
+                        android:id="@+id/turbidityScale"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:visibility="gone"
+                        android:src="@drawable/turbidity_scale"
+                        app:layout_constraintTop_toBottomOf="@id/turbidityLabel" />
+
+                    <TextView
+                        android:id="@+id/turbidityValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/null_val"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/switchCard"
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/rounded_white_bg"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@id/turbidityCard"
+                app:layout_constraintStart_toEndOf="@id/waterCard"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <TextView
+                    android:id="@+id/switchLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/override_switch"
+                    android:layout_gravity="top|center_horizontal"
+                    android:textColor="@color/blue"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/textOff"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/off"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginEnd="8dp" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/overrideSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
+                        app:trackTint="@color/switch_track_color"
+                        app:thumbTint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/textOn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/on"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginStart="8dp" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/consumptionCard"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/rounded_white_bg"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@id/switchCard"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    tools:ignore="UselessParent">
+
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/consumptionLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/water_consumption"
+                        android:textColor="@color/blue"
+                        android:textStyle="bold"
+                        android:textSize="16sp" />
+
+                    <!-- Three column headers + values -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_marginTop="15dp"
+                        android:weightSum="3">
+
+                        <!-- Daily -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/daily"
+                                android:textStyle="bold"
+                                android:textColor="@color/dark" />
+                            <TextView
+                                android:id="@+id/dailyValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_0_l"
+                                android:textSize="16sp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <!-- Monthly -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/monthly"
+                                android:textStyle="bold"
+                                android:textColor="@color/dark" />
+                            <TextView
+                                android:id="@+id/monthlyValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_0_l"
+                                android:textSize="16sp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <!-- Yearly -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/yearly"
+                                android:textStyle="bold"
+                                android:textColor="@color/dark" />
+                            <TextView
+                                android:id="@+id/yearlyValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_0_l"
+                                android:textSize="16sp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

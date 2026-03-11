@@ -8,18 +8,30 @@
     android:background="@drawable/gradient_backblue"
     tools:context=".SettingsActivity">
 
+    <!-- Carat back -->
+    <ImageButton
+        android:id="@+id/btnBackToHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/round_arrow_back_ios_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
     <TextView
         android:id="@+id/lblSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Settings"
         android:textStyle="bold"
-        android:fontFamily="sans-serif"
         android:textColor="@color/white"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/btnBackToHome"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp" />
 
@@ -29,7 +41,6 @@
         android:layout_height="wrap_content"
         android:text="Notifications"
         android:textStyle="bold"
-        android:fontFamily="sans-serif"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,16 +64,183 @@
         app:thumbTint="@color/white" />
 
     <TextView
-        android:id="@+id/overrideLabel"
+        android:id="@+id/leakageLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Turn on/off leakage notification"
+        android:text="Leakage notification"
         android:textSize="16sp"
         android:textColor="@color/white"
         android:layout_marginStart="15dp"
         app:layout_constraintStart_toEndOf="@id/switchTurnOffNotification"
         app:layout_constraintTop_toTopOf="@id/switchTurnOffNotification"
         app:layout_constraintBottom_toBottomOf="@id/switchTurnOffNotification"/>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchSensorNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/switchTurnOffNotification"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="0dp"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        android:checked="true"
+        app:trackTint="@color/switch_track_color"
+        app:thumbTint="@color/white" />
+
+    <TextView
+        android:id="@+id/sensorLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sensor notification"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toEndOf="@id/switchSensorNotification"
+        app:layout_constraintTop_toTopOf="@id/switchSensorNotification"
+        app:layout_constraintBottom_toBottomOf="@id/switchSensorNotification"/>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchThresholdNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/switchSensorNotification"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="0dp"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        android:checked="true"
+        app:trackTint="@color/switch_track_color"
+        app:thumbTint="@color/white" />
+
+    <TextView
+        android:id="@+id/thresholdLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Threshold notification"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toEndOf="@id/switchThresholdNotification"
+        app:layout_constraintTop_toTopOf="@id/switchThresholdNotification"
+        app:layout_constraintBottom_toBottomOf="@id/switchThresholdNotification"/>
+
+    <TextView
+        android:id="@+id/lblThreshold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Threshold"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/switchThresholdNotification"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp" />
+
+    <TextView
+        android:id="@+id/lblDaily"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:text="Daily (in Liters):"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lblThreshold"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp" />
+
+    <EditText
+        android:id="@+id/inputDailyThreshold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/white"
+        android:background="?android:attr/editTextBackground"
+        android:inputType="number"
+        android:textSize="16sp"
+        android:includeFontPadding="false"
+        app:layout_constraintStart_toEndOf="@id/lblDaily"
+        app:layout_constraintBaseline_toBaselineOf="@id/lblDaily"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="30dp"/>
+
+    <TextView
+        android:id="@+id/lblMonthly"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:text="Monthly (in Liters):"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lblDaily"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp" />
+
+    <EditText
+        android:id="@+id/inputMonthlyThreshold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/white"
+        android:background="?android:attr/editTextBackground"
+        android:inputType="number"
+        android:textSize="16sp"
+        android:includeFontPadding="false"
+        app:layout_constraintStart_toEndOf="@id/lblMonthly"
+        app:layout_constraintBaseline_toBaselineOf="@id/lblMonthly"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="30dp"/>
+
+    <TextView
+        android:id="@+id/lblYearly"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:text="Yearly (in Liters):"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lblMonthly"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp" />
+
+    <EditText
+        android:id="@+id/inputYearlyThreshold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/white"
+        android:background="?android:attr/editTextBackground"
+        android:inputType="number"
+        android:textSize="16sp"
+        android:includeFontPadding="false"
+        app:layout_constraintStart_toEndOf="@id/lblYearly"
+        app:layout_constraintBaseline_toBaselineOf="@id/lblYearly"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="30dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSaveThreshold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Threshold"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        android:background="@drawable/pill_edittext"
+        android:textColor="@color/dark"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/inputYearlyThreshold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

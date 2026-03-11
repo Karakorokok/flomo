@@ -11,7 +11,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.database.*
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : BaseActivity() {
 
     private lateinit var database: DatabaseReference
 
@@ -25,7 +25,7 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
-        database = FirebaseDatabase.getInstance("https://flomo-c5e02-default-rtdb.asia-southeast1.firebasedatabase.app")
+        database = FirebaseDatabase.getInstance(dbURL)
             .getReference("useraccount")
 
         findViewById<ImageButton>(R.id.btnBackToMain).setOnClickListener {
@@ -57,6 +57,16 @@ class LoginActivity : AppCompatActivity() {
                         val user = userSnapshot.getValue(UserAccount::class.java)
                         if (user?.email == email && user.password == password) {
                             isMatch = true
+
+                            val userId = userSnapshot.key
+                            val sharedPref = getSharedPreferences("loginPrefs", MODE_PRIVATE)
+                            sharedPref.edit().apply {
+                                putBoolean("isLoggedIn", true)
+                                putString("userEmail", email)
+                                putString("userId", userId)
+                                apply()
+                            }
+
                             break
                         }
                     }

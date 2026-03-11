@@ -20,7 +20,7 @@
     <string name="tds">TDS</string>
     <string name="ppm">--- ppm</string>
     <string name="_7_00">7.00</string>
-    <string name="status">Status</string>
+    <string name="status"></string>
     <string name="_10">10%</string>
     <string name="turbidity">Turbidity</string>
     <string name="null_val">---</string>
@@ -33,4 +33,15 @@
     <string name="monthly">Monthly</string>
     <string name="weekly">Weekly</string>
     <string name="daily">Daily</string>
+    <string name="we_are_a_team">We are a team of IT Students who believe in creating apps that don’t just solve problems, but also encourage positive change. Our project, Consumption Tracker App, is designed to help people become more conscious of how they use resources in their daily lives.\n</string>
+    <string name="to_build">To build a future where technology empowers people to live sustainably and responsibly.</string>
+    <string name="to_provide">To provide an easy-to-use platform that tracks, analyzes, and educates users about their consumption, helping them make smarter decisions.</string>
+    <string name="core_values">
+        &#8226; Innovation – We continuously explore new ways to improve our app.\n&#8226; Sustainability – We design with the goal of protecting resources for future generations.\n&#8226; Teamwork – Every success comes from the collaboration of our team.\n&#8226; User-Focused – We prioritize making our app simple, practical, and impactful.
+    </string>
+    <string name="our_team">
+        &#8226; Russell Roi C. Llantero – Project Leader and Programmer\n&#8226; Rhenzo S. De Juan – UI Designer and QA\n&#8226; Aleah Mae A. Palma – Paper Works and Tester\n&#8226; John Justine V. Patches – Research and Documentation
+    </string>
+    <string name="wed_love">We’d love to hear from you! Whether you have questions, feedback, or need support, feel free to reach out to us:</string>
+    <string name="address">28, Luna La Paz, Iloilo City, Philippines</string>
 </resources>

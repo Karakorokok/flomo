@@ -15,7 +15,7 @@ import androidx.appcompat.app.AlertDialog
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
-class SignupActivity : AppCompatActivity() {
+class SignupActivity : BaseActivity() {
 
     private lateinit var database: DatabaseReference
 
@@ -29,7 +29,7 @@ class SignupActivity : AppCompatActivity() {
             insets
         }
 
-        database = FirebaseDatabase.getInstance("https://flomo-c5e02-default-rtdb.asia-southeast1.firebasedatabase.app")
+        database = FirebaseDatabase.getInstance(dbURL)
             .getReference("useraccount")
 
         val nameInput = findViewById<EditText>(R.id.inputName)
@@ -93,7 +93,6 @@ class SignupActivity : AppCompatActivity() {
             .create()
 
         dialog.show()
-
         dialog.getButton(AlertDialog.BUTTON_POSITIVE)?.setTextColor(getColor(R.color.sky))
     }
 }
